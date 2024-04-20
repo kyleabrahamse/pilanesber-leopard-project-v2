@@ -3,9 +3,21 @@
 @tailwind utilities;
 
 .hero {
-    height: 90vh;
+  height: 100vh;
   background-image: url("/images/hero.jpg");
   background-color: var(--moss-green);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+h1 {
+  font-size: 3.75rem;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 26px;
 }
