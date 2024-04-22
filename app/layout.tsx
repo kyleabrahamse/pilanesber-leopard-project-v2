@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 import Header from "./Header/pages";
+import Footer from "./Footer/page";
 
 const figtree = Figtree({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -15,14 +16,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={figtree.className}>
+      <body className={`${figtree.className} flex min-h-screen flex-col`}>
         <Header />
-        {children}
+        <div className="flex-grow">
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

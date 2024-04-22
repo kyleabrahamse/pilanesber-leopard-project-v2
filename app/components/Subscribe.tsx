@@ -3,21 +3,25 @@ import Image from "next/image";
 
 export default function Subscribe() {
   return (
-    <div className="flex items-center px-20 py-5">
+    <div className="flex items-center justify-between bg-moss px-20 py-5 text-alabaster">
       <div>
         <h1>Stay Updated on Sightings</h1>
         <p>
           Subscribe to stay updated on the latest updates on sightings and
           conservation efforts
         </p>
-        <div className="flex">
-          <input type="email" placeholder="Your Email" />
+        <div className="flex gap-5 pt-10">
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="rounded border-2 border-black bg-alabaster px-5 text-2xl text-black"
+          />
           <Button text="Subscribe" buttonType="black" />
         </div>
       </div>
       <div>
         <Image
-          className="w-5/12"
+          className="ml-auto w-5/12"
           src="/images/logo.png"
           alt="logo"
           width={1000}
