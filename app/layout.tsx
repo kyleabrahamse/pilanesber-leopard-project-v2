@@ -21,10 +21,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${figtree.className} flex min-h-screen flex-col`}>
         <Header />
-        <div className="flex-grow">
-          {children}
-          <Footer />
-        </div>
+        {children}
+        <Footer />
       </body>
     </html>
   );

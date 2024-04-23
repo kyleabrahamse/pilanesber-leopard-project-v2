@@ -14,7 +14,7 @@ export default function Header() {
           height={500}
         />
         <ul className="flex gap-6 text-2xl ">
-          <li>About</li>
+          <li className="">About</li>
           <li>Tours</li>
           <li>Gallery</li>
           <li>Leopard Profiles</li>

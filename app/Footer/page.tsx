@@ -10,12 +10,21 @@ export default function Footer() {
     <footer className="flex flex-col bg-cornsilk px-20 py-10">
       <p className="font-bold">Contact: </p>
       <p className="pb-5 ">pilanesbergleopards@gmail.com</p>
-      <div className="flex gap-5 pb-5 border-b border-black">
-        <FontAwesomeIcon icon={faFacebook} className="w-[40px]" />
-        <FontAwesomeIcon icon={faSquareInstagram} className="w-[40px]" />
-        <FontAwesomeIcon icon={faYoutube} className="w-[40px]" />
+      <div className="flex gap-5 border-b border-black pb-5">
+        <FontAwesomeIcon
+          icon={faFacebook}
+          className="w-[40px] hover:cursor-pointer  hover:text-tigerseye"
+        />
+        <FontAwesomeIcon
+          icon={faSquareInstagram}
+          className="w-[40px] hover:cursor-pointer hover:text-tigerseye"
+        />
+        <FontAwesomeIcon
+          icon={faYoutube}
+          className="w-[40px] hover:cursor-pointer hover:text-tigerseye"
+        />
       </div>
-      <p>copyright @ {date.getFullYear()}</p>
+      <p className="pt-5">copyright @ {date.getFullYear()}</p>
     </footer>
   );
 }
