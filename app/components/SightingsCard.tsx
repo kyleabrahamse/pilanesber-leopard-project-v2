@@ -18,6 +18,7 @@ export default function SightingsCard() {
         width={2000}
         height={2000}
         className="mx-auto w-11/12"
+        priority={true}
       />
       <div className="mx-auto w-11/12">
         <p>Last seen at: Tilodi Dam</p>
