@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 
 // Firebase
 import { collection, getDocs, addDoc } from "firebase/firestore";
-import db from "../Firebase/firebase";
+import {db, storage }from "../Firebase/firebase";
 
 interface Sighting {
   name: string;
   location: string;
   id: string;
+  time: string;
+  description: string;
 }
 
 type Sightings = Sighting[];
@@ -56,6 +58,14 @@ export default function Sightings() {
         time,
         description,
       });
+
+      setSightings((prevSightings) => [...prevSightings, {
+        name,
+        location,
+        time,
+        description,
+        id: colRef.id
+      }]);
       e.currentTarget.reset();
     } catch (error: any) {
       console.log(error.message);
@@ -64,20 +74,30 @@ export default function Sightings() {
 
   return (
     <div className="flex gap-20 bg-alabaster">
-      <div className="w-1/2 ">
-        <SightingsCard />
+      <div className="w-1/2 h-screen overflow-y-auto mb-10">
+        {sightings.map((info) => {
+          return (
+            <SightingsCard
+              key={info.id}
+              name={info.name}
+              location={info.location}
+              time={info.time}
+              description={info.description}
+            />
+          );
+        })}
       </div>
       <div className="w-1/2 pt-10">
         <form className="flex w-8/12 flex-col" onSubmit={handleSubmit}>
           <p>Which leopard was seen?</p>
-          <input type="text" name="name" />
+          <input type="text" name="name"/>
           <p>Location</p>
           <input type="text" name="location" />
           <p>When was it seen?</p>
-          <input type="text" name="time"/>
+          <input type="text" name="time" />
           <p>Description</p>
           <textarea name="description"></textarea>
-          <button type="submit" className="mt-5 w-1/3 bg-earth">
+          <button type="submit" className="mt-5 w-1/3 bg-earth mr-5 rounded-lg px-6 py-2 text-2xl font-medium hover:bg-tigerseye">
             Submit
           </button>
         </form>

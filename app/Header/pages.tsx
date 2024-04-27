@@ -24,7 +24,9 @@ export default function Header() {
           <Link href="/Sightings">
             <li>Sightings Board</li>
           </Link>
-          <li>Conservation</li>
+          <Link href="/Conservation" target="_blank">
+            <li>Conservation</li>
+          </Link>
         </ul>
       </div>
       <div className="flex">
