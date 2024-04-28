@@ -1,11 +1,6 @@
 import Image from "next/image";
 
-export default function SightingsCard({
-  name,
-  location,
-  time,
-  description,
-}: any) {
+export default function SightingsCard({ name, location, time, description, imageUrl }: any) {
   return (
     <div className="my-5 ml-10 rounded-md bg-white pt-8">
       <div className="mx-auto mb-5 w-11/12 border-b border-black">
@@ -20,14 +15,16 @@ export default function SightingsCard({
           <h2 className="ml-5 mt-auto">{name}</h2>
         </div>
       </div>
-      <Image
-        src="/images/kgodisa.JPG"
-        alt="kimbiaLeopard"
-        width={2000}
-        height={2000}
-        className="mx-auto w-11/12"
-        priority={true}
-      />
+      {imageUrl && (
+        <Image
+          src={imageUrl}
+          alt="Sighting Image"
+          width={2000}
+          height={2000}
+          className="mx-auto w-11/12"
+          priority={true}
+        />
+      )}
       <div className="mx-auto w-11/12">
         <p>Last seen at: {location}</p>
         <p>Time seen: {time}</p>

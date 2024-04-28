@@ -24,7 +24,7 @@ export default function Header() {
           <Link href="/Sightings">
             <li>Sightings Board</li>
           </Link>
-          <Link href="/Conservation" target="_blank">
+          <Link href="/Conservation">
             <li>Conservation</li>
           </Link>
         </ul>
