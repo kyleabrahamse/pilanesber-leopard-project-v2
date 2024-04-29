@@ -21,13 +21,13 @@ export default function SightingsCard({ name, location, time, description, image
           alt="Sighting Image"
           width={2000}
           height={2000}
-          className="mx-auto w-11/12"
+          className="mx-auto w-11/12 h-[800px]"
           priority={true}
         />
       )}
       <div className="mx-auto w-11/12">
-        <p>Last seen at: {location}</p>
-        <p>Time seen: {time}</p>
+        <p>Location: {location}</p>
+        <p>Time: {time}</p>
         <p>{description}</p>
       </div>
     </div>

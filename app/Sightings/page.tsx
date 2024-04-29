@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import SightingsCard from "../components/SightingsCard";
 import { useEffect, useState } from "react";
 
@@ -13,7 +13,7 @@ interface Sighting {
   id: string;
   time: string;
   description: string;
-  imageUrl?: string
+  imageUrl?: string;
 }
 
 type Sightings = Sighting[];
@@ -21,6 +21,14 @@ type Sightings = Sighting[];
 export default function Sightings() {
   const colRef = collection(db, "sighting");
   const [sightings, setSightings] = useState<Sightings>([]);
+  const [formData, setFormData] = useState({
+    name: "",
+    location: "",
+    time: "",
+    description: "",
+    image: null as File | null,
+  });
+
   // get collection data
   useEffect(() => {
     const fetchData = async () => {
@@ -32,8 +40,10 @@ export default function Sightings() {
           time: doc.data().time,
           description: doc.data().description,
           id: doc.id,
+          imageUrl: doc.data().imageUrl,
         }));
         setSightings(sightingsData);
+        console.log(sightings);
       } catch (error: any) {
         console.log(error.message);
       }
@@ -44,30 +54,26 @@ export default function Sightings() {
 
   console.log(sightings);
 
+  // Submit form
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const location = formData.get("location") as string;
-    const time = formData.get("time") as string;
-    const description = formData.get("description") as string;
-    const imageFile = formData.get("image") as File;
-
-    // Upload the image file to Firebase Storage
-    let imageUrl = "";
-    if (imageFile) {
-      const storageRef = ref(storage, `images/${imageFile.name}`);
-      const uploadResult = await uploadBytes(storageRef, imageFile);
-      imageUrl = await getDownloadURL(uploadResult.ref);
-    }
-
     try {
-      addDoc(colRef, {
+      const { name, location, time, description, image } = formData;
+
+      let imageUrl = "";
+      if (image) {
+        const storageRef = ref(storage, `images/${image.name}`);
+        const uploadResult = await uploadBytes(storageRef, image);
+        imageUrl = await getDownloadURL(uploadResult.ref);
+      }
+
+      await addDoc(colRef, {
         name,
         location,
         time,
         description,
+        imageUrl,
       });
 
       setSightings((prevSightings) => [
@@ -81,10 +87,36 @@ export default function Sightings() {
           imageUrl,
         },
       ]);
-      e.currentTarget.reset();
+
+      // Reset form data after submission
+      setFormData({
+        name: "",
+        location: "",
+        time: "",
+        description: "",
+        image: null,
+      });
     } catch (error: any) {
       console.log(error.message);
     }
+  };
+
+  // Handle form input changes
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Handle file input change
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files ? e.target.files[0] : null;
+    setFormData({
+      ...formData,
+      image: file,
+    });
   };
 
   return (
@@ -106,14 +138,14 @@ export default function Sightings() {
       <div className="w-1/2 pt-10">
         <form className="flex w-8/12 flex-col gap-2" onSubmit={handleSubmit}>
           <p>Which leopard was seen?</p>
-          <input type="text" name="name" />
+          <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
           <p>Location</p>
-          <input type="text" name="location" />
+          <input type="text" name="location" value={formData.location} onChange={handleInputChange} />
           <p>When was it seen?</p>
-          <input type="text" name="time" />
+          <input type="text" name="time" value={formData.time} onChange={handleInputChange} />
           <p>Description</p>
-          <textarea name="description"></textarea>
-          <input type="file" name="image" accept="image/*" />
+          <textarea name="description" value={formData.description} onChange={handleInputChange}></textarea>
+          <input type="file" name="image" accept="image/*" onChange={handleFileChange} />
           <button
             type="submit"
             className="mr-5 mt-5 w-1/3 rounded-lg bg-earth px-6 py-2 text-2xl font-medium hover:bg-tigerseye"
