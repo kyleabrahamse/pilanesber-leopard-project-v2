@@ -17,7 +17,9 @@ export default function Header() {
           />
         </Link>
         <ul className="flex gap-6 text-2xl ">
-          <li className="">About</li>
+          <Link href="/About">
+            <li className="">About</li>
+          </Link>
           <li>Tours</li>
           <li>Gallery</li>
           <li>Leopard Profiles</li>

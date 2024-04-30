@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import SightingsCard from "../components/SightingsCard";
 import { useEffect, useState } from "react";
 
@@ -102,7 +102,9 @@ export default function Sightings() {
   };
 
   // Handle form input changes
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -138,14 +140,38 @@ export default function Sightings() {
       <div className="w-1/2 pt-10">
         <form className="flex w-8/12 flex-col gap-2" onSubmit={handleSubmit}>
           <p>Which leopard was seen?</p>
-          <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+          />
           <p>Location</p>
-          <input type="text" name="location" value={formData.location} onChange={handleInputChange} />
+          <input
+            type="text"
+            name="location"
+            value={formData.location}
+            onChange={handleInputChange}
+          />
           <p>When was it seen?</p>
-          <input type="text" name="time" value={formData.time} onChange={handleInputChange} />
+          <input
+            type="text"
+            name="time"
+            value={formData.time}
+            onChange={handleInputChange}
+          />
           <p>Description</p>
-          <textarea name="description" value={formData.description} onChange={handleInputChange}></textarea>
-          <input type="file" name="image" accept="image/*" onChange={handleFileChange} />
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleInputChange}
+          ></textarea>
+          <input
+            type="file"
+            name="image"
+            accept="image/*"
+            onChange={handleFileChange}
+          />
           <button
             type="submit"
             className="mr-5 mt-5 w-1/3 rounded-lg bg-earth px-6 py-2 text-2xl font-medium hover:bg-tigerseye"
