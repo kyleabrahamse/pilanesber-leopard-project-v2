@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons/faFacebook";
 import { faSquareInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -11,14 +13,24 @@ export default function Footer() {
       <p className="font-bold">Contact: </p>
       <p className="pb-5 ">pilanesbergleopards@gmail.com</p>
       <div className="flex gap-5 border-b border-black pb-5">
-        <FontAwesomeIcon
-          icon={faFacebook}
-          className="w-[40px] hover:cursor-pointer  hover:text-tigerseye"
-        />
-        <FontAwesomeIcon
-          icon={faSquareInstagram}
-          className="w-[40px] hover:cursor-pointer hover:text-tigerseye"
-        />
+        <Link
+          href="https://www.facebook.com/groups/507280119438996"
+          target="_blank"
+        >
+          <FontAwesomeIcon
+            icon={faFacebook}
+            className="w-[40px] hover:cursor-pointer  hover:text-tigerseye"
+          />
+        </Link>
+        <Link
+          href="https://www.instagram.com/pilanesbergleopardproject/"
+          target="_blank"
+        >@
+          <FontAwesomeIcon
+            icon={faSquareInstagram}
+            className="w-[40px] hover:cursor-pointer hover:text-tigerseye"
+          />
+        </Link>
         <FontAwesomeIcon
           icon={faYoutube}
           className="w-[40px] hover:cursor-pointer hover:text-tigerseye"

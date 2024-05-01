@@ -3,7 +3,7 @@ import Button from "./Button";
 
 export default function Features() {
   return (
-    <div className="flex items-center justify-center gap-20 bg-moss px-40 py-20 text-center text-2xl text-alabaster">
+    <div className="flex items-center justify-center gap-40 bg-moss px-40 py-20 text-center text-2xl text-alabaster">
       <div className="w-[400px]">
         <Image
           className="mx-auto w-[40px] pb-8"
