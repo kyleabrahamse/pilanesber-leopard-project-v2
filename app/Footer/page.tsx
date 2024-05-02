@@ -25,7 +25,7 @@ export default function Footer() {
         <Link
           href="https://www.instagram.com/pilanesbergleopardproject/"
           target="_blank"
-        >@
+        >
           <FontAwesomeIcon
             icon={faSquareInstagram}
             className="w-[40px] hover:cursor-pointer hover:text-tigerseye"
