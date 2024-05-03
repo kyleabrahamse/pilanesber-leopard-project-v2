@@ -20,7 +20,9 @@ export default function Header() {
           <Link href="/About">
             <li className="">About</li>
           </Link>
-          <li>Tours</li>
+          <Link href="/Tours">
+            <li>Tours</li>
+          </Link>
           <li>Gallery</li>
           <li>Leopard Profiles</li>
           <Link href="/Sightings">

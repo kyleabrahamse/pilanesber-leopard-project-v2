@@ -69,3 +69,11 @@ input,
 textarea {
   padding: 5px;
 }
+
+.tours-container {
+  background-image: url("/images/tours.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 70%;
+  height: 90vh;
+}
