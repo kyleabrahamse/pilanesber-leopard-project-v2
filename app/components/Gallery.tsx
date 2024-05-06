@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Gallery() {
   return (
@@ -34,9 +35,11 @@ export default function Gallery() {
           className="img-4"
         />
       </div>
-      <h2 className="cursor-pointer py-10 font-medium underline underline-offset-4 hover:text-tigerseye">
-        View More
-      </h2>
+      <Link href="/Gallery">
+        <h2 className="cursor-pointer py-10 font-medium underline underline-offset-4 hover:text-tigerseye">
+          View More
+        </h2>
+      </Link>
     </div>
   );
 }

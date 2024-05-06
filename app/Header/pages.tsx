@@ -23,8 +23,12 @@ export default function Header() {
           <Link href="/Tours">
             <li>Tours</li>
           </Link>
-          <li>Gallery</li>
-          <li>Leopard Profiles</li>
+          <Link href="/Gallery">
+            <li>Gallery</li>
+          </Link>
+          <Link href="/LeopardProfiles">
+            <li>Leopard Profiles</li>
+          </Link>
           <Link href="/Sightings">
             <li>Sightings Board</li>
           </Link>
