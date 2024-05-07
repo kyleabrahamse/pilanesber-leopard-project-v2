@@ -22,16 +22,16 @@ const leopardIdCards = [
       name: "Serati Female",
       gallery: [
         {
-          img1: "",
+          img1: "/images/serati1.jpg",
         },
         {
-          img2: "",
+          img2: "/images/serati2.jpg",
         },
         {
-          img3: "",
+          img3: "/images/serati3.jpg",
         },
         {
-          img4: "",
+          img4: "/images/serati4.jpg",
         },
       ],
     },
@@ -131,16 +131,16 @@ const leopardIdCards = [
       name: "Nandi Female",
       gallery: [
         {
-          img1: "",
+          img1: "/images/nandi1.jpg",
         },
         {
-          img2: "",
+          img2: "/images/nandi2.jpg",
         },
         {
-          img3: "",
+          img3: "/images/nandi3.jpg",
         },
         {
-          img4: "",
+          img4: "/images/nandi4.jpg",
         },
       ],
     },

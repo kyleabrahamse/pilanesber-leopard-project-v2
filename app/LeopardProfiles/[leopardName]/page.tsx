@@ -15,7 +15,7 @@ export default function LeopardIdPage({ params }: any) {
                   alt={leopard.name}
                   height={500}
                   width={500}
-                  className="w-[250px] rounded-full"
+                  className="mr-5 h-[250px] w-[250px] rounded-full"
                 />
                 <h1 className="mt-auto">{leopard.name}</h1>
               </div>
@@ -35,7 +35,7 @@ export default function LeopardIdPage({ params }: any) {
                 })}
               </div>
               <Image
-                src={leopard.idCard}
+                src={leopard.idCard as string}
                 alt="idcard"
                 height={2000}
                 width={2000}
