@@ -27,7 +27,7 @@ export default function LeopardProfiles() {
           type="text"
           placeholder="Search Name"
           onChange={handleChange}
-          className="my-10 border-2 border-black p-2 text-2xl"
+          className="my-10 border-2 border-black p-2 text-2xl rounded-lg"
         />
       </div>
       <div className="flex flex-wrap justify-center gap-5">

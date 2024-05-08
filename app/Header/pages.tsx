@@ -38,8 +38,12 @@ export default function Header() {
         </ul>
       </div>
       <div className="flex">
-        <Button text="Contact" buttonType="white" />
-        <Button text="Support" buttonType="black" />
+        <Link href="/Contact">
+          <Button text="Contact" buttonType="white" />
+        </Link>
+        <Link href="/Conservation">
+          <Button text="Support" buttonType="black" />
+        </Link>
       </div>
     </div>
   );
