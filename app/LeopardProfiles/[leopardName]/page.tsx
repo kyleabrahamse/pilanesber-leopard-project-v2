@@ -1,7 +1,12 @@
 import leopardIdCardsSorted from "@/app/leopard-profiles";
 import Image from "next/image";
 
-export default function LeopardIdPage({ params }: any) {
+export default function LeopardIdPage({
+  params,
+}: {
+  params: { leopardName: string };
+}) {
+  console.log(params);
   const urlName = params.leopardName.split("%")[0];
   return (
     <div>
