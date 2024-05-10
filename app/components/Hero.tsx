@@ -1,4 +1,5 @@
 import Button from "./Button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -11,7 +12,9 @@ export default function Hero() {
         National Park. Experience the thrill of spotting and photographing these
         magnificent creatures in their natural habitat.
       </p>
-      <Button text="Learn More" buttonType="white" />
+      <Link href="/About">
+        <Button text="Learn More" buttonType="white" />
+      </Link>
     </div>
   );
 }

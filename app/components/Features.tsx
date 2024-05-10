@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "./Button";
+import Link from "next/link";
 
 export default function Features() {
   return (
@@ -16,7 +17,9 @@ export default function Features() {
         <p className="pb-5 font-medium">
           Identify and track leopards, and view recent sightings.
         </p>
-        <Button text="Learn More" buttonType="black" />
+        <Link href="/About">
+          <Button text="Learn More" buttonType="black" />
+        </Link>
       </div>
       <div className="w-[400px]">
         <Image
@@ -30,7 +33,9 @@ export default function Features() {
         <p className="pb-5 font-medium">
           Easily identify individual leopards in the park.
         </p>
-        <Button text="Learn More" buttonType="Black" />
+        <Link href="/LeopardProfiles">
+          <Button text="Learn More" buttonType="Black" />
+        </Link>
       </div>
       <div className="w-[400px]">
         <Image
@@ -44,7 +49,9 @@ export default function Features() {
         <p className="pb-5 font-medium">
           See the last known location of leopards in the park.
         </p>
-        <Button text="Learn More" buttonType="black" />
+        <Link href="/Sightings">
+          <Button text="Learn More" buttonType="black" />
+        </Link>
       </div>
     </div>
   );

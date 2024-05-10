@@ -1,10 +1,10 @@
 import Button from "./Button";
-
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Preserve() {
   return (
-    <div className="flex gap-10 bg-alabaster px-20 py-20 mt-10">
+    <div className="mt-10 flex gap-10 bg-alabaster px-20 py-20">
       <div className="w-1/2">
         <h1 className="pb-5 text-6xl font-medium">
           Preserving Leopards in Pilanesberg National Park
@@ -30,7 +30,9 @@ export default function Preserve() {
             </p>
           </div>
         </div>
-        <Button text="Donate" buttonType="white" />
+        <Link href="/Conservation">
+          <Button text="Donate" buttonType="white" />
+        </Link>
       </div>
       <div className="w-1/2">
         <Image
