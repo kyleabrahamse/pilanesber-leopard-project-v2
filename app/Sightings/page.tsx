@@ -24,20 +24,10 @@ interface Sighting {
 
 type Sightings = Sighting[];
 
-const handleDelete = async (id: string) => {
-  console.log(id);
-  try {
-    await deleteDoc(doc(db, "sighting", id));
-    console.log(doc(db, "sighting", id));
-    console.log(id);
-  } catch (error) {
-    console.error("Error deleting document: ", error);
-  }
-};
-
 export default function Sightings() {
   const colRef = collection(db, "sighting");
   const [sightings, setSightings] = useState<Sightings>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     location: "",
@@ -46,6 +36,17 @@ export default function Sightings() {
     image: null as File | null,
   });
 
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteDoc(doc(db, "sighting", id));
+      console.log(doc(db, "sighting", id));
+      setSightings((prevSightings) =>
+        prevSightings.filter((sighting) => sighting.id !== id),
+      );
+    } catch (error) {
+      console.error("Error deleting document: ", error);
+    }
+  };
   // get collection data
   useEffect(() => {
     const fetchData = async () => {
@@ -74,6 +75,7 @@ export default function Sightings() {
   // Submit form
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
 
     try {
       const { name, location, time, description, image } = formData;
@@ -113,6 +115,7 @@ export default function Sightings() {
         description: "",
         image: null,
       });
+      setIsLoading(false);
     } catch (error: any) {
       console.log(error.message);
     }
@@ -194,8 +197,9 @@ export default function Sightings() {
           <button
             type="submit"
             className="mr-5 mt-5 w-1/3 rounded-lg bg-earth px-6 py-2 text-2xl font-medium hover:bg-tigerseye"
+            disabled={isLoading}
           >
-            Submit
+            {isLoading ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>
