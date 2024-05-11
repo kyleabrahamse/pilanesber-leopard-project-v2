@@ -1,6 +1,28 @@
 import Image from "next/image";
+import Button from "./Button";
 
-export default function SightingsCard({ name, location, time, description, imageUrl }: any) {
+interface SightingsCardProps {
+  name: string;
+  location: string;
+  time: string;
+  description: string;
+  imageUrl?: string;
+  id: string;
+  onDelete: (id: string) => void; // Define onDelete prop function
+}
+
+export default function SightingsCard({
+  name,
+  location,
+  time,
+  description,
+  imageUrl,
+  id,
+  onDelete,
+}: SightingsCardProps) {
+  const handleDeleteClick = () => {
+    onDelete(id);
+  };
   return (
     <div className="my-5 ml-10 rounded-md bg-white pt-8">
       <div className="mx-auto mb-5 w-11/12 border-b border-black">
@@ -21,7 +43,7 @@ export default function SightingsCard({ name, location, time, description, image
           alt="Sighting Image"
           width={2000}
           height={2000}
-          className="mx-auto w-11/12 h-[800px]"
+          className="mx-auto h-[800px] w-11/12"
           priority={true}
         />
       )}
@@ -29,6 +51,9 @@ export default function SightingsCard({ name, location, time, description, image
         <p>Location: {location}</p>
         <p>Time: {time}</p>
         <p>{description}</p>
+        <div className="mt-4 text-right" onClick={handleDeleteClick}>
+          <Button buttonType="white" text="Delete" />
+        </div>
       </div>
     </div>
   );

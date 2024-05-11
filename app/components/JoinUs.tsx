@@ -22,7 +22,7 @@ export default function JoinUs() {
             <Button text="Contribute" buttonType="white" />
           </Link>
           <Link href="/Sightings">
-          <Button text="Report" buttonType="black" />
+            <Button text="Report" buttonType="black" />
           </Link>
         </div>
       </div>

@@ -3,7 +3,13 @@ import SightingsCard from "../components/SightingsCard";
 import { useEffect, useState } from "react";
 
 // Firebase
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 import { db, storage } from "../Firebase/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -17,6 +23,17 @@ interface Sighting {
 }
 
 type Sightings = Sighting[];
+
+const handleDelete = async (id: string) => {
+  console.log(id);
+  try {
+    await deleteDoc(doc(db, "sighting", id));
+    console.log(doc(db, "sighting", id));
+    console.log(id);
+  } catch (error) {
+    console.error("Error deleting document: ", error);
+  }
+};
 
 export default function Sightings() {
   const colRef = collection(db, "sighting");
@@ -129,10 +146,12 @@ export default function Sightings() {
             <SightingsCard
               key={info.id}
               name={info.name}
+              id={info.id}
               location={info.location}
               time={info.time}
               description={info.description}
               imageUrl={info.imageUrl}
+              onDelete={handleDelete}
             />
           );
         })}
