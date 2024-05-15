@@ -4,7 +4,7 @@ export default function Tours() {
   return (
     <div>
       <div className="tours-container content-center px-20">
-        <div className="w-1/2 ">
+        <div className="w-1/2 pr-20"> 
           <h1 className="text-alabaster">Photo Safaris and Tours</h1>
           <p className="text-alabaster">
             Experience Pilanesberg&apos;s wildlife with our trusted operators.
