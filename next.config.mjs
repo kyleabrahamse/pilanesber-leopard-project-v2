@@ -12,7 +12,7 @@ const nextConfig = {
     return [
       {
         // matching all API routes
-        source: "/api/:gs://leopard-project.appspot.com/images",
+        source: "/api/[param]",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
