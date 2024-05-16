@@ -12,7 +12,7 @@ const nextConfig = {
     return [
       {
         // matching all API routes
-        source: "/api/:https://console.firebase.google.com/project/leopard-project/storage/leopard-project.appspot.com/files/~2Fimages",
+        source: "/api/https://console.firebase.google.com/project/leopard-project/storage/leopard-project.appspot.com/files/~2Fimages",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
