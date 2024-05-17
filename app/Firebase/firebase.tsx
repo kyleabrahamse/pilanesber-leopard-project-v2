@@ -4,13 +4,14 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from 'firebase/storage'; // Import the getStorage function
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCoceKxaGJLd2AxlKP7KF-6-N-4XBOYyRM",
-  authDomain: "leopard-project.firebaseapp.com",
-  projectId: "leopard-project",
-  storageBucket: "leopard-project.appspot.com",
-  messagingSenderId: "262497736723",
-  appId: "1:262497736723:web:dccb3c2c30489966f2c7e6"
+  apiKey: "AIzaSyAOf9gXlItZYLPh-hq4cH3YLVNqulQn6-o",
+  authDomain: "pilanesberg-leopards-f68bc.firebaseapp.com",
+  projectId: "pilanesberg-leopards-f68bc",
+  storageBucket: "pilanesberg-leopards-f68bc.appspot.com",
+  messagingSenderId: "318585215067",
+  appId: "1:318585215067:web:060bdc003f467d3d02c77e"
 };
+
 
 // init firebase app
 initializeApp(firebaseConfig);
