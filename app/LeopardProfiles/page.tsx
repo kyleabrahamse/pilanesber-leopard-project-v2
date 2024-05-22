@@ -21,7 +21,7 @@ export default function LeopardProfiles() {
         <h1>Leopards of Pilanesberg</h1>
         <p>
           Browse collected images of leopards or use id cards to help identify
-          which leoprad you&apos;ve seen
+          which leopard you&apos;ve seen
         </p>
         <input
           type="text"
@@ -31,8 +31,8 @@ export default function LeopardProfiles() {
         />
       </div>
       <div className="flex flex-wrap justify-center gap-5">
-        {filteredLeopards.map((id, index) => {
-          return <ProfileIdCard image={id.imgUrl} name={id.name} key={index} />;
+        {filteredLeopards.map((id) => {
+          return <ProfileIdCard image={id.imgUrl} name={id.name} key={id.name} />;
         })}
       </div>
     </div>

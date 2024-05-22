@@ -13,14 +13,14 @@ import {
 import { db, storage } from "../Firebase/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-interface Sighting {
+type Sighting = {
   name: string;
   location: string;
   id: string;
   time: string;
   description: string;
   imageUrl?: string;
-}
+};
 
 type Sightings = Sighting[];
 
@@ -36,6 +36,7 @@ export default function Sightings() {
     image: null as File | null,
   });
 
+  // delete document
   const handleDelete = async (id: string) => {
     try {
       await deleteDoc(doc(db, "sighting", id));
@@ -47,6 +48,7 @@ export default function Sightings() {
       console.error("Error deleting document: ", error);
     }
   };
+ 
   // get collection data
   useEffect(() => {
     const fetchData = async () => {
@@ -132,7 +134,7 @@ export default function Sightings() {
     });
   };
 
-  // Handle file input change
+  // Handle file change
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;
     setFormData({

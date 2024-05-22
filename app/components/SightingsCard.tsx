@@ -1,14 +1,15 @@
+import React from "react";
 import Image from "next/image";
 import Button from "./Button";
 
-interface SightingsCardProps {
+type SightingsCardProps = {
   name: string;
   location: string;
   time: string;
   description: string;
   imageUrl?: string;
   id: string;
-  onDelete: (id: string) => void; // Define onDelete prop function
+  onDelete: (id: string) => void; 
 }
 
 export default function SightingsCard({
@@ -23,6 +24,7 @@ export default function SightingsCard({
   const handleDeleteClick = () => {
     onDelete(id);
   };
+  
   return (
     <div className="my-5 ml-10 rounded-md bg-white pt-8">
       <div className="mx-auto mb-5 w-11/12 border-b border-black">
