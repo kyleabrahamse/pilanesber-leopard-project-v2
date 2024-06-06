@@ -5,6 +5,7 @@
 .hero {
   background-image: url("/images/hero.jpg");
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 h1 {

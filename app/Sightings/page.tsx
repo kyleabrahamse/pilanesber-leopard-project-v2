@@ -71,7 +71,6 @@ export default function Sightings() {
 
     fetchData();
   }, []);
-
   console.log(sightings);
 
   // Submit form
@@ -96,7 +95,8 @@ export default function Sightings() {
         description,
         imageUrl,
       });
-
+      
+      // Update state
       setSightings((prevSightings) => [
         ...prevSightings,
         {

@@ -1,12 +1,24 @@
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import Button from "../components/Button";
 
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+
 export default function Header() {
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+
+  const openMenu = () => {
+    setOpenMobileMenu((prevValue) => !prevValue);
+  };
+
   return (
     <div className="flex items-center justify-between bg-cornsilk ">
-      <div className="flex items-center font-medium">
+      <div
+        className={`flex ${openMobileMenu && "flex-col"} items-center font-medium`}
+      >
         <Link href="/">
           <Image
             className="mr-5 w-32"
@@ -16,9 +28,11 @@ export default function Header() {
             height={500}
           />
         </Link>
-        <ul className="flex gap-6 text-2xl ">
+        <ul
+          className={`gap-6 text-2xl xl:flex ${openMobileMenu ? "flex flex-col pb-5 pl-5 pt-10" : "hidden"}`}
+        >
           <Link href="/About">
-            <li className="">About</li>
+            <li>About</li>
           </Link>
           <Link href="/Tours">
             <li>Tours</li>
@@ -37,7 +51,7 @@ export default function Header() {
           </Link>
         </ul>
       </div>
-      <div className="flex">
+      <div className="hidden xl:flex ">
         <Link href="/Contact">
           <Button text="Contact" buttonType="white" />
         </Link>
