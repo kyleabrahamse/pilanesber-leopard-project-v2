@@ -64,7 +64,7 @@ export default function Header() {
         </div>
       </div>
       <div
-        className={`mobile-menu bg-cornsilk transition-all duration-500 ease-in-out overflow-hidden ${
+        className={`mobile-menu bg-cornsilk transition-all duration-700 ease-in-out overflow-hidden ${
           openMobileMenu ? "max-h-[500px] visible" : "max-h-0 invisible"
         }`}
       >

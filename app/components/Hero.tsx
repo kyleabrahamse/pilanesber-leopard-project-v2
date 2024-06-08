@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="flex h-[90vh] w-1/2 flex-col justify-center px-20">
+    <div className="flex flex-col justify-center p-10 md:px-20 xl:h-[90vh] xl:w-1/2">
       <h1 className="pb-10 text-6xl font-medium text-alabaster">
         Discover the Majestic Leopards of the Pilanesberg
       </h1>

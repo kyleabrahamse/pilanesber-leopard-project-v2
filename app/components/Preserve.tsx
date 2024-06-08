@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Preserve() {
   return (
-    <div className="mt-10 flex gap-10 bg-alabaster px-20 py-20">
-      <div className="w-1/2">
+    <div className="mt-10 flex flex-col gap-10 bg-alabaster md:p-20 p-10 xl:flex-row">
+      <div className="xl:w-1/2">
         <h1 className="pb-5 text-6xl font-medium">
           Preserving Leopards in Pilanesberg National Park
         </h1>
@@ -14,15 +14,15 @@ export default function Preserve() {
           vital role of the Pilanesberg Leopard Project in protecting these
           magnificent creatures.
         </p>
-        <div className="flex gap-5 pb-10 font-medium">
-          <div className="w-1/2">
+        <div className="flex flex-col gap-5 pb-10 font-medium md:flex-row">
+          <div className="md:w-1/2">
             <h2 className="pb-5 text-4xl">Protecting Leopards</h2>
             <p className="text-2xl">
               Join us in safeguarding the future of leopards and their natural
               habitat.
             </p>
           </div>
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <h2 className="pb-5 text-4xl">Support Us</h2>
             <p className="text-2xl">
               Make a difference by contributing to our leopard conservation
@@ -34,7 +34,7 @@ export default function Preserve() {
           <Button text="Donate" buttonType="white" />
         </Link>
       </div>
-      <div className="w-1/2">
+      <div className="xl:w-1/2">
         <Image
           src="/images/cta.jpg"
           alt="leopard"

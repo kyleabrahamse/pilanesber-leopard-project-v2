@@ -8,6 +8,13 @@
   background-repeat: no-repeat;
 }
 
+@media (max-width: 1250px) {
+  .hero {
+    background-image: none;
+    background-color: #6b7c6b;
+  }
+}
+
 h1 {
   font-size: 3.75rem;
 }
@@ -36,6 +43,14 @@ img {
   grid-template-columns: repeat(8, 15vh);
   grid-template-rows: repeat(3, 15vw);
   grid-gap: 15px;
+}
+
+@media (max-width: 1200px) {
+  .img-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .img-1 {
