@@ -9,7 +9,7 @@ const date = new Date();
 
 export default function Footer() {
   return (
-    <footer className="flex flex-wrap flex-col bg-cornsilk xl:px-20 px-5 py-10">
+    <footer className="flex flex-col bg-cornsilk xl:px-20 px-5 py-10">
       <p className="font-bold">Contact: </p>
       <p className="xl:pb-5">pilanesbergleopards@gmail.com</p>
       <div className="flex gap-5 border-b border-black pb-5">
